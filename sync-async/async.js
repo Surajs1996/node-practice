@@ -4,7 +4,7 @@ const https = require("https");
 
 console.log("Hello Async Programming");
 
-const dummyDataReadSync =fs.readFileSync("./sync-async/dummyFile.txt", "utf8");
+const dummyDataReadSync = fs.readFileSync("./sync-async/dummyFile.txt", "utf8");
 
 console.log("Sync File Read =>", dummyDataReadSync);
 
@@ -29,8 +29,8 @@ https.get('https://dummy.restapiexample.com/api/v1/employees', (res) => {
 })
 
 fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then(response => response.json())
-      .then(json => console.log("fetch =>",json))
+    .then(response => response.json())
+    .then(json => console.log("fetch =>", json))
 
 
 fs.readFile("./sync-async/dummyFile.txt", "utf8", (err, res) => {

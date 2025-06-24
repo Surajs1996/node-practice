@@ -1,21 +1,21 @@
 const fs = require("fs");
 
-setImmediate(()=>{
- console.log("SetImmediate called");
+setImmediate(() => {
+    console.log("SetImmediate called");
 });
 
-setTimeout(()=>{
+setTimeout(() => {
     console.log("setTimeout Called");
-},0);
+}, 0);
 
 Promise.resolve("Promise Resolved").then(console.log);
 
-fs.readFile("./sync-async/dummyFile.txt", "utf8", ()=>{
+fs.readFile("./sync-async/dummyFile.txt", "utf8", () => {
     console.log("File reading successfull");
 });
 
-process.nextTick(()=>{
-    process.nextTick(()=>{
+process.nextTick(() => {
+    process.nextTick(() => {
         console.log("process next tick inner");
     });
     console.log("process next tick outer");

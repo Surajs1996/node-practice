@@ -4,27 +4,27 @@ const A = 200;
 
 console.log("event loop started");
 
-setImmediate(()=>{
+setImmediate(() => {
     console.log("Set Immediate called");
 });
 
-setTimeout(()=>{
+setTimeout(() => {
     console.log("Set Timeout called for 1 sec")
 }, 1000);
 
-fs.readFile("./sync-async/dummyFile.txt", "utf8", (err, res)=>{
+fs.readFile("./sync-async/dummyFile.txt", "utf8", (err, res) => {
     console.log("File reading operation done successfully", res);
 })
 
-Promise.resolve("Promise Resolved").then((val)=>{
+Promise.resolve("Promise Resolved").then((val) => {
     console.log(val);
 })
 
-process.nextTick(()=>{
+process.nextTick(() => {
     console.log("process next tick");
 });
 
-function printA(){
+function printA() {
     console.log("printing value of A", A);
 };
 

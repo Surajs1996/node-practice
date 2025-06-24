@@ -17,7 +17,7 @@ setTimeout(() => {
     console.log("Set Timer for 0 sec");
 }, 0);
 
-crypto.pbkdf2("password", "salt", 500000, 1005, "sha512", (err, key)=>{
+crypto.pbkdf2("password", "salt", 500000, 1005, "sha512", (err, key) => {
     console.log("crypto key =>", key);
 });
 

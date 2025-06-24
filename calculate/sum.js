@@ -1,9 +1,9 @@
 
 require('./../xyz')
-function calculateSum(a,b){
-    let sum = a+b;
-    console.log("Sum = ",sum);
+function calculateSum(a, b) {
+    let sum = a + b;
+    console.log("Sum = ", sum);
 }
 
 
-module.exports = {calculateSum};
+module.exports = { calculateSum };

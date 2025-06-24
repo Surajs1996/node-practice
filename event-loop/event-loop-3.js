@@ -2,35 +2,35 @@ const fs = require("fs");
 
 console.log("event loop started");
 
-setImmediate(()=>{
+setImmediate(() => {
     console.log("set Immediate called 1");
 });
 
-fs.readFile("./sync-async/dummyFile.txt", "utf8", (err,res)=>{
-    setImmediate(()=>{
+fs.readFile("./sync-async/dummyFile.txt", "utf8", (err, res) => {
+    setImmediate(() => {
         console.log("set Immediate called 2");
     });
 
-    setTimeout(()=>{
+    setTimeout(() => {
         console.log("set Timeout 2")
-    },0);
+    }, 0);
 
-    process.nextTick(()=>{
+    process.nextTick(() => {
         console.log("Process next tick 2")
     })
 
     console.log("File reading operation successfull", res);
 });
 
-setTimeout(()=>{
+setTimeout(() => {
     console.log("set timeout 1");
-},0);
+}, 0);
 
-Promise.resolve("Promise Resolved").then((res)=>{
+Promise.resolve("Promise Resolved").then((res) => {
     console.log("Promise is resolved by value = >", res)
 });
 
-process.nextTick(()=>{
+process.nextTick(() => {
     console.log("Process next tick 1")
 })
 

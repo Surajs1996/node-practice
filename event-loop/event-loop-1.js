@@ -3,20 +3,20 @@ const fs = require("fs");
 console.log("Event loop started");
 const a = 2050;
 
-fs.readFile("./sync-async/dummyFile.txt", "utf8", (err,res)=>{
+fs.readFile("./sync-async/dummyFile.txt", "utf8", (err, res) => {
     console.log("FIle read opeartion done => ", res);
 });
 
 
-setImmediate(()=>{
+setImmediate(() => {
     console.log("Set Immediate function called");
 });
 
-setTimeout(()=>{
+setTimeout(() => {
     console.log("Set Timeout for 1 sec");
 }, 1000);
 
-function printA(){
+function printA() {
     console.log("Printing Value of A=>", a);
 }
 
